@@ -31,6 +31,8 @@ public class OracleProdutoDao implements ProdutoDAO {
 
       Statement stmt = connection.createStatement();
       stmt.execute(sql);
+
+      System.out.println("O oracle foi chamado");
     } catch (SQLException e) {
       throw new IllegalArgumentException("Não foi possível conectar ao banco");
     }
