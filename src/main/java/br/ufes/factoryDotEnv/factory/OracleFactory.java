@@ -1,7 +1,7 @@
-package br.ufes.factory.factory;
+package br.ufes.factoryDotEnv.factory;
 
-import br.ufes.factory.dao.OracleProdutoDao;
-import br.ufes.factory.dao.ProdutoDAO;
+import br.ufes.factoryDotEnv.dao.OracleProdutoDao;
+import br.ufes.factoryDotEnv.dao.ProdutoDAO;
 
 public class OracleFactory implements DataBaseTypeFactory {
 

@@ -1,6 +1,6 @@
-package br.ufes.factory.dao;
+package br.ufes.factoryDotEnv.dao;
 
-import br.ufes.factory.model.Produto;
+import br.ufes.factoryDotEnv.model.Produto;
 import io.github.cdimascio.dotenv.Dotenv;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,12 +12,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class MySQLProdutoDao implements ProdutoDAO {
+public class MysqlProdutoDao implements ProdutoDAO {
 
   private Connection connection;
   private List<Produto> produtos = new ArrayList<>();
 
-  public MySQLProdutoDao() {
+  public MysqlProdutoDao() {
     try {
       connection = DriverManager.getConnection(
           Dotenv.configure().load().get("MY_ENV_MYSQL"));

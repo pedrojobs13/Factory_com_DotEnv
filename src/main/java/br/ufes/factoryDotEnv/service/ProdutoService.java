@@ -1,8 +1,8 @@
-package br.ufes.factory.service;
+package br.ufes.factoryDotEnv.service;
 
-import br.ufes.factory.dao.ProdutoDAO;
-import br.ufes.factory.factory.DaoFactory;
-import br.ufes.factory.model.Produto;
+import br.ufes.factoryDotEnv.dao.ProdutoDAO;
+import br.ufes.factoryDotEnv.factory.DaoFactory;
+import br.ufes.factoryDotEnv.model.Produto;
 import java.util.List;
 
 public class ProdutoService {
@@ -10,12 +10,8 @@ public class ProdutoService {
   private ProdutoDAO produtoDAO;
   private DaoFactory daoFactory = new DaoFactory();
 
-  public ProdutoService(String dataBaseType) {
-    String dataBase = "";
+  public ProdutoService(String dataBaseType){
     produtoDAO = daoFactory.getSqlType(dataBaseType).getProdutoDAO();
-    dataBase = daoFactory.getSqlType(dataBaseType).getProdutoDAO().getClass().getSimpleName();
-    System.out.println(
-        "O Banco de dados selecionado foi o " + dataBase.substring(0, dataBase.length() - 10));
   }
 
   public void adicionarProduto(String nome, double valor) {

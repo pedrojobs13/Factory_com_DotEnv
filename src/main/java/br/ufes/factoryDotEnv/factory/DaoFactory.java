@@ -1,4 +1,6 @@
-package br.ufes.factory.factory;
+package br.ufes.factoryDotEnv.factory;
+
+import java.lang.reflect.InvocationTargetException;
 
 public class DaoFactory {
 
@@ -8,7 +10,7 @@ public class DaoFactory {
     }
 
     if (dataBaseType.equalsIgnoreCase("MYSQL")) {
-      return new MySQLFactory();
+      return new MysqlFactory();
     } else if (dataBaseType.equalsIgnoreCase("ORACLE")) {
       return new OracleFactory();
     }

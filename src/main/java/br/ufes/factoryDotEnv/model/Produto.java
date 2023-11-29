@@ -1,4 +1,4 @@
-package br.ufes.factory.model;
+package br.ufes.factoryDotEnv.model;
 
 import java.util.Objects;
 

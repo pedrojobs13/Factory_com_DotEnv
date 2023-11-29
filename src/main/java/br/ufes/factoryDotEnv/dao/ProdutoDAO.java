@@ -1,6 +1,6 @@
-package br.ufes.factory.dao;
+package br.ufes.factoryDotEnv.dao;
 
-import br.ufes.factory.model.Produto;
+import br.ufes.factoryDotEnv.model.Produto;
 import java.util.List;
 
 public interface ProdutoDAO {
