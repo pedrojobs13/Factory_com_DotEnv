@@ -3,6 +3,7 @@ package br.ufes.factoryDotEnv.service;
 import br.ufes.factoryDotEnv.dao.ProdutoDAO;
 import br.ufes.factoryDotEnv.factory.DaoFactory;
 import br.ufes.factoryDotEnv.model.Produto;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 public class ProdutoService {
@@ -10,8 +11,9 @@ public class ProdutoService {
   private ProdutoDAO produtoDAO;
   private DaoFactory daoFactory = new DaoFactory();
 
-  public ProdutoService(String dataBaseType){
-    produtoDAO = daoFactory.getSqlType(dataBaseType).getProdutoDAO();
+  public ProdutoService()
+      throws ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+    produtoDAO = daoFactory.getSqlType().getProdutoDAO();
   }
 
   public void adicionarProduto(String nome, double valor) {

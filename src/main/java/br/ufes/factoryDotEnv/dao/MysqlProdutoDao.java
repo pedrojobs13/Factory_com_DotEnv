@@ -20,7 +20,7 @@ public class MysqlProdutoDao implements ProdutoDAO {
   public MysqlProdutoDao() {
     try {
       connection = DriverManager.getConnection(
-          Dotenv.configure().load().get("MY_ENV_MYSQL"));
+          "jdbc:sqlite: banco.db");
       String sql =
           "CREATE TABLE IF NOT EXISTS produto (\n"
               + "	id INTEGER PRIMARY KEY AUTOINCREMENT,\n"
@@ -84,7 +84,7 @@ public class MysqlProdutoDao implements ProdutoDAO {
 
   @Override
   public List<Produto> listar() {
-    String sql = "SELECT * FROM produtos ";
+    String sql = "SELECT * FROM produto ";
     List<Produto> produtos = new ArrayList<>();
     try {
       Statement stmt = connection.createStatement();

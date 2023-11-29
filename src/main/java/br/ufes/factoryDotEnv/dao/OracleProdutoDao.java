@@ -20,7 +20,7 @@ public class OracleProdutoDao implements ProdutoDAO {
   public OracleProdutoDao() {
     try {
       connection = DriverManager.getConnection(
-          Dotenv.configure().load().get("MY_ENV_ORACLE"));
+          "jdbc:sqlite: banco.db");
 
       String sql =
           "CREATE TABLE IF NOT EXISTS produto (\n"
@@ -82,7 +82,7 @@ public class OracleProdutoDao implements ProdutoDAO {
 
   @Override
   public List<Produto> listar() {
-    String sql = "SELECT * FROM produtos ";
+    String sql = "SELECT * FROM produto ";
     List<Produto> produtos = new ArrayList<>();
     try {
       Statement stmt = connection.createStatement();
